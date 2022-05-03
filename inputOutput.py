@@ -1,9 +1,12 @@
+# start form input by pressing "y"
+# add details for one or multiple users
+# exit with "n" and display information
+
 start_form = "n"
 start_form = input("Please press 'y' to start the form input: ")
 users = []
 while start_form == "y":
     start_form = "n"
-    print("This is a short survey: ")
     user_first_name = input("first name:  ")
     user_last_name = input("last name:  ")
     user_gender = input("gender(m/w/x): ")
@@ -15,7 +18,6 @@ while start_form == "y":
 
     user_jobtitle = input("Job Title: ")
     user_hobbies = input("Your hobbies: ")
-    # user_list_hobbies = list(user_hobbies)
     users.append({
         "first_name": user_first_name,
         "last_name": user_last_name,
@@ -27,8 +29,9 @@ while start_form == "y":
     start_form = input("Press 'y' to add another user or 'n' to exit: ")
     if start_form == "n":
         for user in users:
-            print(f"User Index: {users.index(user)} \n")
+            print(f"User Index: {users.index(user)}")
             print(f'full name: {user["first_name"]} {user["last_name"]}')
             print(f'gender and age: {user["gender"]} , {user["age"]}')
             print(f'Job title: {user["job_title"]}')
             print(f'Hobbies: {user["hobbies"]}')
+            print("")
